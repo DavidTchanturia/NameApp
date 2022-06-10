@@ -1,0 +1,147 @@
+{% extends 'login.html'%}
+
+{% block title %} Name {% endblock %}
+
+{% block navbar%}
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="/" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="name" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">App</a>
+    <a href="database" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">database</a>
+  </div>
+</div>
+{% endblock %}
+
+
+
+{% block content %}
+<style>
+Body {
+  font-family: Calibri, Helvetica, sans-serif;
+  background-image: url("https://img.freepik.com/free-vector/pastel-vector-dull-pastel-abstract-textured-background_53876-110546.jpg?w=2000");
+}
+button {
+       background-color: black;
+       width: 50%;
+        color: orange;
+        padding: 15px;
+        margin: 10px 0px;
+        border: none;
+        cursor: pointer;
+         }
+ /*form {*/
+ /*       border: 3px solid #f1f1f1;*/
+ /*   }*/
+
+ input[type=text] {
+        width: 50%;
+        margin: 16px 0;
+        padding: 12px 20px;
+        display: inline-block;
+        border: 1px solid green;
+        box-sizing: border-box;
+    }
+ button:hover {
+        opacity: 0.7;
+    }
+
+
+</style>
+<body>
+    <center> <h1> Find info </h1> </center>
+    <form method="POST">
+        <div class="container">
+            <input type="text" placeholder="Enter Name" name="name" required style="margin-left:25%">
+            <button style="background-color: #f84434; color: black; margin-left: 25%">Find Info</button>
+        </div>
+    </form>
+</body>
+
+
+
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f84434;
+  margin-top: 30%;
+}
+</style>
+</head>
+<body>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <h3>{{ all_info[-1].name}}</h3>
+        <p>gender: {{all_info[-1].gender}}</p>
+        <p>age: {{all_info[-1].age}}</p>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h3>{{ all_info[-2].name}}</h3>
+        <p>gender: {{all_info[-2].gender}}</p>
+        <p>age: {{all_info[-2].age}}</p>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h3>{{ all_info[-3].name}}</h3>
+        <p>gender: {{all_info[-3].gender}}</p>
+        <p>age: {{all_info[-3].age}}</p>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h3>{{ all_info[-4].name}}</h3>
+        <p>gender: {{all_info[-4].gender}}</p>
+        <p>age: {{all_info[-4].age}}</p>
+    </div>
+  </div>
+</div>
+
+</body>
+{% endblock %}
